@@ -15,23 +15,24 @@ export class DbzService {
     {id:uuid(),name:'Vegeta',power:7500}
   ];
 
-  onNewCharacter(character:Character):void{
+  addCharacter(character:Character):void{
     //this.characters.unshift(character); //inserta al princio
     const newCharacter:Character ={
       id:uuid(),
       ...character
     }
+
     this.characters.push(newCharacter);
-  // console.log('MainPage');
-  // console.log(character);
+   console.log('MainPage');
+   console.log(newCharacter);
   }
 
   // onDeleteCharacter(index:number){
   //   this.characters.splice(index,1);
   // }
 
-  onDeleteCharacter(index:number){
-    this.characters.splice(index,1);
+  DeleteCharacterById(id:string){
+    this.characters=this.characters.filter(character=>character.id !== id);
   }
 
   constructor() { }

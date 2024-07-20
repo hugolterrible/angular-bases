@@ -10,10 +10,23 @@ import { DbzService } from '../services/dbz.service';
 
 export class MainPageComponent {
 
-  constructor(public dbzService:DbzService){
+  constructor(private dbzService:DbzService){ }
 
 
+  get chraracters():Character[]{
+    return [...this.dbzService.characters];
   }
+
+  onDeleteCharacter(id:string):void{
+    this.dbzService.DeleteCharacterById(id);
+  }
+
+  onNewCharacter(character:Character):void{
+    this.dbzService.addCharacter(character);
+  }
+
+
+
 
 // public characters: Character[] = [
 //   {name:'Krillins',power:1000},
