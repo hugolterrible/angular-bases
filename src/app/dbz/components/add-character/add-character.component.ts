@@ -7,7 +7,7 @@ import { Character } from '../../interfaces/chatacter.interface';
   styleUrl: './add-character.component.css'
 })
 export class AddCharacterComponent {
-  @Output('newData')
+  @Output('newData')//Envia a Padre main-page
   public onNewCharacter: EventEmitter<Character> = new EventEmitter();
 
   public character:Character={

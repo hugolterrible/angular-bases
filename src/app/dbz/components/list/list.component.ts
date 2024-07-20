@@ -9,12 +9,12 @@ import { Character } from '../../interfaces/chatacter.interface';
 
 
 export class ListComponent {
-  @Input()
+  @Input() //Recibe de Padre main-page
   public characterList: Character[] = [//Por default o vacio
     {name:'Trunk',power:10}
   ];
 
-  @Output()
+  @Output()//Envia a Padre mainpage
   //public onDelete= new EventEmitter<number>();
   public onDelete:EventEmitter<number> = new EventEmitter();
 
